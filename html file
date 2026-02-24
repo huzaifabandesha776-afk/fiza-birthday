@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Fiza 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+html,body{height:100%;width:100%;overflow:hidden;}
+body{
+background:#000;
+color:#fff;
+}
+
+video.bg{
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+object-fit:cover;
+z-index:-2;
+filter:brightness(0.6);
+}
+
+.overlay{
+position:fixed;
+top:0;left:0;width:100%;height:100%;
+background:linear-gradient(180deg,rgba(0,0,0,0.4),rgba(0,0,0,0.8));
+z-index:-1;
+}
+
+.container{
+height:100vh;
+width:100vw;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.title{
+font-size:3rem;
+font-weight:800;
+animation: glow 2s infinite alternate;
+}
+
+.name{
+font-size:3.5rem;
+color:#ff5fa2;
+margin:10px 0;
+}
+
+.message{
+max-width:700px;
+font-size:1.1rem;
+line-height:1.7;
+margin-top:20px;
+opacity:0;
+animation: fadeIn 2s ease forwards;
+animation-delay:1.5s;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+border-radius:20px;
+padding:25px;
+margin-top:30px;
+box-shadow:0 0 40px rgba(255,105,180,0.3);
+}
+
+.btn{
+margin-top:30px;
+padding:14px 35px;
+border-radius:30px;
+border:none;
+background:linear-gradient(45deg,#ff4d8d,#ff9bd5);
+color:white;
+font-size:1rem;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 0 20px rgba(255,77,141,0.6);
+animation:pulse 2s infinite;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px #ff5fa2,0 0 20px #ff5fa2;}
+to{text-shadow:0 0 25px #ff5fa2,0 0 50px #ff5fa2;}
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);}
+}
+
+.confetti{
+position:fixed;
+width:10px;height:10px;
+background:red;
+animation: fall 5s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10px) rotate(0deg);}100%{transform:translateY(110vh) rotate(360deg);}
+}
+</style>
+</head>
+<body>
+
+<video class="bg" autoplay muted loop playsinline>
+  <source src="https://cdn.coverr.co/videos/coverr-balloons-flying-9719/1080p.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<audio id="music" autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+  <div class="title">🎉 Happy Birthday 🎉</div>
+  <div class="name">Fiza Ahmad 💖</div>
+
+  <div class="card">
+    <div class="message">
+      Today is not just a normal day — it’s the day the world became more beautiful because you were born 💫
+      <br><br>
+      Fiza, you are a blessing, a smile, a light, and a beautiful soul that makes every moment brighter ✨
+      <br><br>
+      May your life be filled with happiness, success, love, peace, and endless smiles 💕
+      May every dream you have turn into reality 🌸
+      <br><br>
+      Stay the same beautiful, kind, and amazing person you are 💐
+      <br><br>
+      💝 Happy Birthday once again, Fiza Ahmad 💝
+    </div>
+  </div>
+
+  <button class="btn" onclick="playMusic()">🎂 Celebrate 🎉</button>
+</div>
+
+<script>
+function playMusic(){
+  document.getElementById('music').play();
+}
+
+// Confetti
+for(let i=0;i<60;i++){
+  let c=document.createElement('div');
+  c.className='confetti';
+  c.style.left=Math.random()*100+'vw';
+  c.style.animationDuration=(Math.random()*3+3)+'s';
+  c.style.background=`hsl(${Math.random()*360},100%,50%)`;
+  document.body.appendChild(c);
+}
+</script>
+
+</body>
+</html>
